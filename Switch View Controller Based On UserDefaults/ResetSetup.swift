@@ -1,5 +1,5 @@
 //
-//  FinishSetup.swift
+//  ResetSetup.swift
 //  Switch View Controller Based On UserDefaults
 //
 //  Created by Tyler Lyczak on 11/5/20.
@@ -7,24 +7,21 @@
 
 import UIKit
 
-class FinishSetup: UIViewController {
+class ResetSetup : UIViewController {
     
     
-    @IBAction func onFinishSetup(_ sender: Any) {
+    @IBAction func onClickResetSetup(_ sender: Any) {
         
-        // Set the UserDefaults key for SetupFinished to true
+        // Set the UserDefaults key for SetupFinished to false
         let defaults = UserDefaults.standard
-        defaults.set(true, forKey: "SetupFinished")
+        defaults.set(false, forKey: "SetupFinished")
         
         // Run the function from the SceneDelegate to switch root view controllers
         let sceneDelegate = UIApplication.shared.connectedScenes.first!.delegate as! SceneDelegate
-        sceneDelegate.switchViewControllerToRoot()
+        sceneDelegate.switchViewControllerToSetup()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
-
-
 }

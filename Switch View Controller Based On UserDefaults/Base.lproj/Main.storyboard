@@ -87,22 +87,70 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1st Screen (After Setup)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X0f-LY-Npf">
-                                <rect key="frame" x="93" y="404" width="229" height="88"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1st Screen (After Setup), Press the button to go to the next view to reset the setup" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X0f-LY-Npf">
+                                <rect key="frame" x="69" y="327" width="276" height="136"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="X0f-LY-Npf" secondAttribute="height" multiplier="69:34" id="6r7-jU-3xE"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nfm-An-aFi">
+                                <rect key="frame" x="151" y="489" width="113" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="nfm-An-aFi" secondAttribute="height" multiplier="113:30" id="DLi-qZ-96e"/>
+                                </constraints>
+                                <state key="normal" title="Go To Next View"/>
+                                <connections>
+                                    <segue destination="alC-XJ-1Sf" kind="show" id="orK-Cw-Xt9"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="X0f-LY-Npf" secondAttribute="trailing" constant="69" id="0fg-bY-hU7"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="nfm-An-aFi" secondAttribute="bottom" constant="343" id="BfL-ZF-pWS"/>
+                            <constraint firstItem="nfm-An-aFi" firstAttribute="top" secondItem="X0f-LY-Npf" secondAttribute="bottom" constant="26" id="JC7-Wr-L1F"/>
+                            <constraint firstItem="nfm-An-aFi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="151" id="XjA-1O-agw"/>
+                            <constraint firstItem="X0f-LY-Npf" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="239" id="ahy-DJ-a7d"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="nfm-An-aFi" secondAttribute="trailing" constant="150" id="hik-qz-hgr"/>
+                            <constraint firstItem="nfm-An-aFi" firstAttribute="top" secondItem="X0f-LY-Npf" secondAttribute="bottom" constant="26" id="j4W-UB-zRE"/>
+                            <constraint firstItem="X0f-LY-Npf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="69" id="pbp-Yn-91I"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="1st Screen (1st Navigation Controller)" id="ogZ-lC-3sa"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1050.7246376811595" y="138.61607142857142"/>
+        </scene>
+        <!--Reset Setup-->
+        <scene sceneID="qlu-aR-Yxa">
+            <objects>
+                <viewController id="alC-XJ-1Sf" customClass="ResetSetup" customModule="Switch_View_Controller_Based_On_UserDefaults" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="oYz-Fj-KoE">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kap-ol-gF3">
+                                <rect key="frame" x="165" y="433" width="84" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Reset Setup"/>
+                                <connections>
+                                    <action selector="onClickResetSetup:" destination="alC-XJ-1Sf" eventType="touchUpInside" id="QYS-Xy-cRr"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="IZb-j0-TxZ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="qXt-qF-d6a"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="U8f-HZ-XKC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1854" y="139"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="E1f-bK-NdV">

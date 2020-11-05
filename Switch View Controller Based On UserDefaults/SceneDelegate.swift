@@ -11,15 +11,33 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
     
+    func switchViewControllerToRoot()    {
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let navigationController:UINavigationController = storyboard.instantiateInitialViewController() as! UINavigationController
+        let initialViewController = storyboard.instantiateViewController(identifier: "ViewController")
+        navigationController.viewControllers = [initialViewController]
+        self.window?.rootViewController = navigationController
+        self.window?.makeKeyAndVisible()
+        
+        navigationController.popToRootViewController(animated: false)
+    }
+    
+    func switchViewControllerToSetup()    {
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let navigationController:UINavigationController = storyboard.instantiateInitialViewController() as! UINavigationController
+        let initialViewController = storyboard.instantiateViewController(identifier: "SetupViewController")
+        navigationController.viewControllers = [initialViewController]
+        self.window?.rootViewController = navigationController
+        self.window?.makeKeyAndVisible()
+        
+        navigationController.popToRootViewController(animated: false)
+    }
+    
     func hasSetupFinished() -> Bool {
         
         let defaults = UserDefaults.standard
-        
-        defaults.set(false, forKey: "SetupFinished")
-        
-        let st : Bool = defaults.bool(forKey: "SetupFinished")
-        
-        print(st)
         
         if defaults.bool(forKey: "SetupFinished")  {
             print("Setup has finished")

@@ -17,6 +17,7 @@
 		1E4723B125524822009DA9EE /* Switch_View_Controller_Based_On_UserDefaultsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4723B025524822009DA9EE /* Switch_View_Controller_Based_On_UserDefaultsUITests.swift */; };
 		1E5CE9BD25548F8C006DC047 /* SetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5CE9BC25548F8C006DC047 /* SetupViewController.swift */; };
 		1E5CE9C22554943C006DC047 /* FinishSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5CE9C12554943C006DC047 /* FinishSetup.swift */; };
+		1E5CE9CA2554BF14006DC047 /* ResetSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5CE9C92554BF14006DC047 /* ResetSetup.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		1E4723B225524822009DA9EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1E5CE9BC25548F8C006DC047 /* SetupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupViewController.swift; sourceTree = "<group>"; };
 		1E5CE9C12554943C006DC047 /* FinishSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishSetup.swift; sourceTree = "<group>"; };
+		1E5CE9C92554BF14006DC047 /* ResetSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetSetup.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 				1E47239725524822009DA9EE /* Assets.xcassets */,
 				1E47239925524822009DA9EE /* LaunchScreen.storyboard */,
 				1E47239C25524822009DA9EE /* Info.plist */,
+				1E5CE9C92554BF14006DC047 /* ResetSetup.swift */,
 			);
 			path = "Switch View Controller Based On UserDefaults";
 			sourceTree = "<group>";
@@ -269,6 +272,7 @@
 				1E47239325524822009DA9EE /* ViewController.swift in Sources */,
 				1E47238F25524822009DA9EE /* AppDelegate.swift in Sources */,
 				1E47239125524822009DA9EE /* SceneDelegate.swift in Sources */,
+				1E5CE9CA2554BF14006DC047 /* ResetSetup.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
