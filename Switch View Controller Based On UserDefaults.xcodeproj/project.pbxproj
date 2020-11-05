@@ -15,6 +15,8 @@
 		1E47239B25524822009DA9EE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E47239925524822009DA9EE /* LaunchScreen.storyboard */; };
 		1E4723A625524822009DA9EE /* Switch_View_Controller_Based_On_UserDefaultsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4723A525524822009DA9EE /* Switch_View_Controller_Based_On_UserDefaultsTests.swift */; };
 		1E4723B125524822009DA9EE /* Switch_View_Controller_Based_On_UserDefaultsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4723B025524822009DA9EE /* Switch_View_Controller_Based_On_UserDefaultsUITests.swift */; };
+		1E5CE9BD25548F8C006DC047 /* SetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5CE9BC25548F8C006DC047 /* SetupViewController.swift */; };
+		1E5CE9C22554943C006DC047 /* FinishSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5CE9C12554943C006DC047 /* FinishSetup.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		1E4723AC25524822009DA9EE /* Switch View Controller Based On UserDefaultsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Switch View Controller Based On UserDefaultsUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E4723B025524822009DA9EE /* Switch_View_Controller_Based_On_UserDefaultsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Switch_View_Controller_Based_On_UserDefaultsUITests.swift; sourceTree = "<group>"; };
 		1E4723B225524822009DA9EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1E5CE9BC25548F8C006DC047 /* SetupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupViewController.swift; sourceTree = "<group>"; };
+		1E5CE9C12554943C006DC047 /* FinishSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishSetup.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,10 +103,12 @@
 		1E47238D25524822009DA9EE /* Switch View Controller Based On UserDefaults */ = {
 			isa = PBXGroup;
 			children = (
+				1E5CE9C12554943C006DC047 /* FinishSetup.swift */,
 				1E47238E25524822009DA9EE /* AppDelegate.swift */,
 				1E47239025524822009DA9EE /* SceneDelegate.swift */,
 				1E47239225524822009DA9EE /* ViewController.swift */,
 				1E47239425524822009DA9EE /* Main.storyboard */,
+				1E5CE9BC25548F8C006DC047 /* SetupViewController.swift */,
 				1E47239725524822009DA9EE /* Assets.xcassets */,
 				1E47239925524822009DA9EE /* LaunchScreen.storyboard */,
 				1E47239C25524822009DA9EE /* Info.plist */,
@@ -258,6 +264,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1E5CE9C22554943C006DC047 /* FinishSetup.swift in Sources */,
+				1E5CE9BD25548F8C006DC047 /* SetupViewController.swift in Sources */,
 				1E47239325524822009DA9EE /* ViewController.swift in Sources */,
 				1E47238F25524822009DA9EE /* AppDelegate.swift in Sources */,
 				1E47239125524822009DA9EE /* SceneDelegate.swift in Sources */,

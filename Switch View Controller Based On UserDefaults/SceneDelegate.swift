@@ -10,6 +10,27 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
+    
+    func hasSetupFinished() -> Bool {
+        
+        let defaults = UserDefaults.standard
+        
+        defaults.set(false, forKey: "SetupFinished")
+        
+        let st : Bool = defaults.bool(forKey: "SetupFinished")
+        
+        print(st)
+        
+        if defaults.bool(forKey: "SetupFinished")  {
+            print("Setup has finished")
+            return true
+        }
+        else    {
+            //defaults.set(true, forKey: "SetupFinished")
+            print("Setup has not finished")
+            return false
+        }
+    }
 
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
@@ -17,6 +38,20 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let _ = (scene as? UIWindowScene) else { return }
+        
+        if !hasSetupFinished() {
+            // This complicated junk allows to start another view controller instead of the initial one
+            if let windowScene = scene as? UIWindowScene {
+                let window = UIWindow(windowScene: windowScene)
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let navigationController:UINavigationController = storyboard.instantiateInitialViewController() as! UINavigationController
+                let initialViewController = storyboard.instantiateViewController(identifier: "SetupViewController")
+                navigationController.viewControllers = [initialViewController]
+                window.rootViewController = navigationController
+                self.window = window
+                window.makeKeyAndVisible()
+            }
+        }
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
