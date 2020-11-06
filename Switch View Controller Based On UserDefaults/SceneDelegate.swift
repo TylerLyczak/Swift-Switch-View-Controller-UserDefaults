@@ -13,38 +13,59 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     func switchViewControllerToRoot()    {
         
+        // Get the StoryBoard
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        // Get the current navigation controller
         let navigationController:UINavigationController = storyboard.instantiateInitialViewController() as! UINavigationController
+        
+        // Make a variable to the ViewController, the original root controller
         let initialViewController = storyboard.instantiateViewController(identifier: "ViewController")
+        
+        // Set the navigation controller to the new navigation controller
         navigationController.viewControllers = [initialViewController]
         self.window?.rootViewController = navigationController
         self.window?.makeKeyAndVisible()
         
+        // Pop all the views on the navigation controller so the user goes to the new root we made for them
         navigationController.popToRootViewController(animated: false)
     }
     
     func switchViewControllerToSetup()    {
         
+        // Get the StoryBoard
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        // Get the current navigation controller
         let navigationController:UINavigationController = storyboard.instantiateInitialViewController() as! UINavigationController
+        
+        // Make a variable to the SetupViewController
         let initialViewController = storyboard.instantiateViewController(identifier: "SetupViewController")
+        
+        // Set the navigation controller to the new navigation controller
         navigationController.viewControllers = [initialViewController]
         self.window?.rootViewController = navigationController
         self.window?.makeKeyAndVisible()
         
+        // Pop all the views on the navigation controller so the user goes to the new root we made for them
         navigationController.popToRootViewController(animated: false)
     }
     
+    
+    /*
+     In This function, we check the user defaults for the "SetupFinished" key
+     This key stores a boolean to check if we finished the setup view
+     */
     func hasSetupFinished() -> Bool {
         
         let defaults = UserDefaults.standard
         
+        // Returns true or false, correlating with the UserDefaults value
         if defaults.bool(forKey: "SetupFinished")  {
             print("Setup has finished")
             return true
         }
         else    {
-            //defaults.set(true, forKey: "SetupFinished")
             print("Setup has not finished")
             return false
         }
@@ -57,16 +78,33 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let _ = (scene as? UIWindowScene) else { return }
         
+        // Runs the hasSetupFinished function to check the UserDefaults, only runs when the user needs to finish the setup
+        // So 3 Instances
+        //  -   User opened app for the first time
+        //  -   User opened app, but never finished the setup
+        //  -   User reseted the setup from the root navigation controller
         if !hasSetupFinished() {
-            // This complicated junk allows to start another view controller instead of the initial one
+            // Get the WindowScene
             if let windowScene = scene as? UIWindowScene {
+                
+                // Get the window if its not defined yet
                 let window = UIWindow(windowScene: windowScene)
+                
+                // Get the StoryBoard
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                
+                // Get the current navigation controller
                 let navigationController:UINavigationController = storyboard.instantiateInitialViewController() as! UINavigationController
+                
+                // Make a variable to the SetupViewController
                 let initialViewController = storyboard.instantiateViewController(identifier: "SetupViewController")
+                
+                // Set the navigation controller to the new navigation controller
                 navigationController.viewControllers = [initialViewController]
                 window.rootViewController = navigationController
                 self.window = window
+                
+                // Make window visable
                 window.makeKeyAndVisible()
             }
         }
